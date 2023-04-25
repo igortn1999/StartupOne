@@ -1,0 +1,2 @@
+docker build -t pg-db .
+docker run -d --name pg-db-container -p 5432:5432 -v pg-data:/var/lib/postgresql/data pg-db
