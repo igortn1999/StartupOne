@@ -1,10 +1,10 @@
-package com.fiap.codigo;
+package com.fiap.codigoServer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CodigoApplicationTests {
+class CodigoServerApplicationTests {
 
 	@Test
 	void contextLoads() {

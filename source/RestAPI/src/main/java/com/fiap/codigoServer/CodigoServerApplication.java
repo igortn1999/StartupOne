@@ -1,13 +1,13 @@
-package com.fiap.codigo;
+package com.fiap.codigoServer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CodigoApplication {
+public class CodigoServerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CodigoApplication.class, args);
+		SpringApplication.run(CodigoServerApplication.class, args);
 	}
 
 }
