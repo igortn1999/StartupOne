@@ -1,0 +1,16 @@
+---
+version: "3"
+
+services: 
+  postgresql:
+    image: "postgres_codigo"
+    build: "./source/PostgreSQL"
+    container_name: "codigo_db"
+      #environment:
+      #- POSTGRES_DB=codigo_db
+      #- POSTGRES_USER=codigo
+      #- POSTGRES_PASSWORD=codigo
+    ports: 
+      - "5432:5432"
+    restart: "always"
+
