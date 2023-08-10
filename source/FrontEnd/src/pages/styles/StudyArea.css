@@ -1,0 +1,14 @@
+.StudyArea{
+    display: grid;
+    grid-template-columns:20% 40% 40%;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+}
+
+.lesson{
+    grid-column: 1/span 3;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+

@@ -1,0 +1,10 @@
+.CodeOutput{
+    background-color: black;
+    font-size: 0.4rem;
+    color:white;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: left;
+    padding-left: 1rem;
+}
