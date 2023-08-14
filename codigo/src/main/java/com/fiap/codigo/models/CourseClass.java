@@ -1,6 +1,8 @@
 package com.fiap.codigo.models;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -8,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -27,9 +30,6 @@ public class CourseClass {
 	@Column(name = "estimatehours", nullable = false, precision = 4)
 	public Double estimateHours;
 	
-	@Column(nullable = false)
-	public Boolean isComplete;
-	
 	@Column(name = "videourl", nullable = false, length = 500)
 	public String videoUrl;
 	
@@ -46,6 +46,10 @@ public class CourseClass {
 	
 	@Column(name = "task", nullable = false, length = 100)
 	public String task;
+	
+	@OneToMany(mappedBy = "courseClass")
+	List<StudentClassRegistration> students = new ArrayList<>();
+	
 	
 	
 	

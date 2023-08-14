@@ -32,8 +32,8 @@ public class Course {
 	@Column(name = "estimatehours", nullable = false, precision = 4)
 	public Double estimateHours;
 	
-	@Column(name = "percentcomplete", nullable = false, precision = 4)
-	public Double percentComplete;
+//	@Column(name = "percentcomplete", nullable = false, precision = 4) //TODO - Should this be tracked by the StundentClassRegistration table?
+//	public Double percentComplete; 
 	
 	@Column(name = "demourl", nullable = false, length = 500)
 	public String demoUrl;
@@ -43,5 +43,6 @@ public class Course {
 	
 	//Find out how to deal with this DB-wise
 	public Set<CourseMarkers> markers = new HashSet<>(); 
+	
 }
 
