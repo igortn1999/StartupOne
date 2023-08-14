@@ -42,7 +42,57 @@ public class Course {
 	public List<CourseClass> classes = new ArrayList<>();
 	
 	//Find out how to deal with this DB-wise
-	public Set<CourseMarkers> markers = new HashSet<>(); 
+	public Set<CourseMarkers> markers = new HashSet<>();
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Double getEstimateHours() {
+		return estimateHours;
+	}
+
+	public void setEstimateHours(Double estimateHours) {
+		this.estimateHours = estimateHours;
+	}
+
+	public String getDemoUrl() {
+		return demoUrl;
+	}
+
+	public void setDemoUrl(String demoUrl) {
+		this.demoUrl = demoUrl;
+	}
+
+	public List<CourseClass> getClasses() {
+		return classes;
+	}
+
+	public void setClasses(List<CourseClass> classes) {
+		this.classes = classes;
+	}
+
+	public Set<CourseMarkers> getMarkers() {
+		return markers;
+	}
+
+	public void setMarkers(Set<CourseMarkers> markers) {
+		this.markers = markers;
+	} 
+	
+	
 	
 }
 

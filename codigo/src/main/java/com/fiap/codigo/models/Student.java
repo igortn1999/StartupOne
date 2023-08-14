@@ -36,12 +36,102 @@ public class Student {
 	@Column(name = "active", nullable = false)
 	boolean isActive = false;
 	
-//	List<Course> courses = new ArrayList<>();//TODO - Might have a better way to link Student - Course - Class
-	
 	@Column(name = "plantype", nullable = false)
 	PlanType planType;
 	
 	@OneToMany(mappedBy = "student")
-	List<StudentClassRegistration> classes = new ArrayList<>();//Linking ManyToMany relationship	
+	List<StudentClassRegistration> classeRegistrations = new ArrayList<>();//Linking ManyToMany relationship	
+
+//	List<Course> courses = new ArrayList<>();//TODO - Might have a better way to link Student - Course - Class
+	
+	public Student() {
+		
+	}
+	
+	public Student(String email, String password, String name, String lastname, boolean isActive, PlanType planType, List<StudentClassRegistration> classeRegistrations) {
+		this.email = email;
+		setPassword(password);
+		this.name = name;
+		this.lastname = lastname;
+		this.isActive = isActive;
+		this.planType = planType;
+		setClasses(classeRegistrations);
+	}
+	
+	public Student(String email, String password, String name, String lastname) {
+		this.email = email;
+		setPassword(password);
+		this.name = name;
+		this.lastname = lastname;
+		this.isActive = true;
+		this.planType = PlanType.NORMAL;
+		//classRegistrations attribute is already instaciated with a empty list
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;//TODO - must get the encrypted password stored in the database
+	}
+
+	public void setPassword(String password) {
+		this.password = password;//TODO - must encrypt password before storing in database
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	public PlanType getPlanType() {
+		return planType;
+	}
+
+	public void setPlanType(PlanType planType) {
+		this.planType = planType;
+	}
+
+	public List<StudentClassRegistration> getClasses() {
+		return classeRegistrations;
+	}
+
+	public void setClasses(List<StudentClassRegistration> classeRegistrations) {
+		if(classeRegistrations != null) {
+			this.classeRegistrations = classeRegistrations;
+		}
+	}
+	
+	public void addClassRegistration(StudentClassRegistration classRegistration) {
+		getClasses().add(classRegistration);
+	}
+	
+	public void addClassRegistrations(List<StudentClassRegistration> classes) {
+		classes.stream().forEach(cr -> this.addClassRegistration(cr));
+	}
 	
 }
