@@ -44,6 +44,27 @@ public class Course {
 	//Find out how to deal with this DB-wise
 	public Set<CourseMarkers> markers = new HashSet<>();
 
+	public Course() {
+	}
+
+	public Course(String name, String description, Double estimateHours, String demoUrl, List<CourseClass> classes,
+			Set<CourseMarkers> markers) {
+		this.name = name;
+		this.description = description;
+		this.estimateHours = estimateHours;
+		this.demoUrl = demoUrl;
+		this.classes = classes;
+		this.markers = markers;
+	}
+	
+	public Course(String name, String description, Double estimateHours, String demoUrl){
+		this.name = name;
+		this.description = description;
+		this.estimateHours = estimateHours;
+		this.demoUrl = demoUrl;
+
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -81,7 +102,17 @@ public class Course {
 	}
 
 	public void setClasses(List<CourseClass> classes) {
-		this.classes = classes;
+		if(classes != null) {			
+			this.classes = classes;
+		}
+	}
+	
+	public void addClass(CourseClass courseClass) {
+		getClasses().add(courseClass);
+	}
+	
+	public void addClasses(List<CourseClass> classes) {
+		classes.stream().forEach(cc -> addClass(cc));
 	}
 
 	public Set<CourseMarkers> getMarkers() {
