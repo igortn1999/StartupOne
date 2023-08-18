@@ -1,4 +1,5 @@
-import './styles/codeOutput.css'
+import React from 'react';
+import '../styles/codeOutput.css'
 
 function CodeOutput(){
 

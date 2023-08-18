@@ -1,0 +1,37 @@
+.hero {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+  justify-items: center;
+  background-color: rgba(52, 52, 52) !important;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+}
+
+.hero .presentation {
+  margin: 1rem;
+  font-family: "Source Code Pro", monospace;
+}
+
+.hero .presentation h1 {
+  background: linear-gradient(151deg, #c41c5c 0%, #ce5885 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero .presentation h3{
+    font-weight: 800;
+}
+
+.hero .presentation p,.hero .presentation h3{
+    color: white;
+}
+
+.hero .learn-code{
+    width: 30rem;
+    height: 28rem;
+    object-fit: cover;
+    border-radius: 6.25rem 6.25rem 6.25rem 15rem;
+
+}
