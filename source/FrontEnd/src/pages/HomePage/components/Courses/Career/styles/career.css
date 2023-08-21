@@ -1,16 +1,28 @@
 .card-carreira{
-    min-width: 12rem;
+    width: 13rem;
     margin-left: 2rem;
     margin-right: 2rem;
     margin-bottom: 2rem;
     display: grid;
     grid-template-columns: 100%;
     justify-items: center;
-    background-color: rgba(14, 14, 51, 0.454);
+    background-color: rgba(14, 14, 51, 0.604);
     border-radius: 1rem;
     text-align: left;
     color:white;
     
+}
+
+.catalogo-carreira,.catalogo-cursos{
+    background-image: url("../../../../../assets/courses_bg.svg");
+    background-repeat: no-repeat;
+    background-position: bottom;
+
+}
+
+.content-carreira{
+    width: 90%;
+    min-height: 13rem;
 }
 
 .imagem-card{
@@ -28,7 +40,21 @@
     margin-bottom: 1rem;
 }
 
-.card-carreira button{
+.course-begin-btn{
     background: linear-gradient(90deg, #C41C5C 0%, #CE5885 100%);
     color: white;
+    width: 100%;
+}
+
+.blocked{
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    cursor:not-allowed;
+    width: 90%;
+    margin-bottom: 1rem;
 }

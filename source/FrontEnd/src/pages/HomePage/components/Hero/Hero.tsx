@@ -13,7 +13,10 @@ function Hero() {
           configurar o computador previamente.
         </p>
       </article>
+      <div className="learn-code-presentation">
       <img src={learnCode} className="learn-code"/>
+      </div>
+
     </section>
   );
 }

@@ -13,6 +13,10 @@
     color:white !important;
 }
 
+.nav-link:hover{
+    color:rgb(216, 21, 83) !important;
+}
+
 .nav-items-container{
     justify-content: center;
     width: 100%;

@@ -5,12 +5,16 @@
   justify-items: center;
   background-color: rgba(52, 52, 52) !important;
   padding-top: 6rem;
-  padding-bottom: 2rem;
 }
 
 .hero .presentation {
   margin: 1rem;
   font-family: "Source Code Pro", monospace;
+  background-image: url("../../../../assets/presentation_bg_2.svg");
+  background-size: 100%;
+  height: 100%;
+  width: 100%;
+  
 }
 
 .hero .presentation h1 {
