@@ -1,0 +1,15 @@
+.course-details{
+    display: grid;
+    justify-items: center;
+}
+
+.course-list{
+    display: grid;
+    justify-items: center;
+    width: 90%;
+}
+
+.course-description{
+    width: 80%;
+    opacity: 0.8;
+}

@@ -1,0 +1,48 @@
+.Footer ul{
+    list-style-type: none;
+}
+
+.Footer{
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    justify-items: center;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    margin-bottom: 0rem;
+    background-image: url("../../../../assets/worm.svg");
+}
+
+.Footer .footer-hr{
+    width: 100%;
+    grid-column: 1 / span 7;
+    color: #C41C5C;
+}
+
+.Footer .rights{
+    grid-column: 1 / span 7;
+}
+
+.Footer .separator{
+    height: 50%;
+}
+
+
+.Footer .social-media-logo{
+    width: 2rem;
+    height: 2rem;
+}
+
+.Footer .social-media,.Footer .social-media ul{
+    width: 100%;
+}
+
+.Footer .social-media ul{
+    display: flex;
+    flex-direction: row;
+}
+
+.Footer .social-media ul li{
+  margin-left: 2rem;
+}

@@ -1,11 +1,18 @@
+import { Link, useNavigate } from "react-router-dom";
 import "./Styles/navbar.css";
 import logo from "./assets/logo.png";
-
 function Navbar() {
+  const navigate = useNavigate();
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary navbar-home">
       <div className="container-fluid">
-        <img src={logo} className="startup-logo"/>
+        <img
+          src={logo}
+          className="startup-logo"
+          onClick={(e) => {
+            navigate("/");
+          }}
+        />
         <button
           className="navbar-toggler"
           type="button"
@@ -17,42 +24,45 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse nav-items-container" id="navbarNav">
+        <div
+          className="collapse navbar-collapse nav-items-container"
+          id="navbarNav"
+        >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <Link className="nav-item nav-link" to={"/"}>
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-item nav-link" to={"/"}>
                 Catálogo
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-item nav-link" to={"/"}>
                 Serviços
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-item nav-link" to={"/"}>
                 Planos
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-item nav-link" to={"/"}>
                 Sobre nós
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-item nav-link" to={"/"}>
                 Login
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-item nav-link" to={"/"}>
                 Cadastro
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
