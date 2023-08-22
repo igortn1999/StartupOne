@@ -3,7 +3,8 @@ import AceEditor from 'react-ace';
 import './styles/StudyArea.css';
 import 'ace-builds/src-noconflict/theme-dracula';
 import 'ace-builds/src-noconflict/mode-javascript';
-import CodeOutput from '../components/codeOutput';
+import 'ace-builds/src-noconflict/ace';
+import CodeOutput from './components/codeOutput';
 
 function StudyArea() {
     const [code, setCode] = useState('const message = "Hello World!" \n\nconsole.log(message);');

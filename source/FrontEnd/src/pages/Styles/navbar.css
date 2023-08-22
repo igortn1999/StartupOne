@@ -1,0 +1,32 @@
+.navbar-home{
+    font-family: 'Lato', sans-serif;
+    background-color: rgba(52,52,52) !important;
+}
+
+.navbar-brand{
+    color:rgb(216, 21, 83);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.nav-link{
+    color:white !important;
+}
+
+.nav-link:hover{
+    color:rgb(216, 21, 83) !important;
+}
+
+.nav-items-container{
+    justify-content: center;
+    width: 100%;
+}
+
+.navbar-nav{
+    width: 90%;
+    justify-content: space-evenly;
+}
+
+.startup-logo{
+    width: 14%;
+}

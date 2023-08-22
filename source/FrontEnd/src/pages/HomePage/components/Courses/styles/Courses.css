@@ -1,0 +1,24 @@
+.catalogo-carreira{
+    display: flex;
+    overflow: scroll;
+    width: 86%;
+}
+
+
+.catalogo-cursos{
+    display: flex;
+    overflow: scroll;
+    width: 86%;
+
+}
+
+.cursos{
+    display: grid;
+    justify-items: center;
+    margin-top: 4rem;
+}
+
+hr{
+    color: rgba(255,255,255,0.8);
+    width: 90%;
+}
