@@ -39,8 +39,8 @@ public class Student {
 	@Column(name = "plantype", nullable = false)
 	PlanType planType;
 	
-	@OneToMany(mappedBy = "student")
-	List<StudentClassRegistration> classeRegistrations = new ArrayList<>();//Linking ManyToMany relationship	
+//	@OneToMany(mappedBy = "student")//DO NOT USE THIS IN JAVA SPRING!!! Memory leak!
+//	List<StudentClassRegistration> classeRegistrations = new ArrayList<>();//Linking ManyToMany relationship	
 
 //	List<Course> courses = new ArrayList<>();//TODO - Might have a better way to link Student - Course - Class
 	
@@ -48,14 +48,15 @@ public class Student {
 		
 	}
 	
-	public Student(String email, String password, String name, String lastname, boolean isActive, PlanType planType, List<StudentClassRegistration> classeRegistrations) {
+//	public Student(String email, String password, String name, String lastname, boolean isActive, PlanType planType, List<StudentClassRegistration> classeRegistrations) {
+	public Student(String email, String password, String name, String lastname, boolean isActive, PlanType planType) {
 		this.email = email;
 		setPassword(password);
 		this.name = name;
 		this.lastname = lastname;
 		this.isActive = isActive;
 		this.planType = planType;
-		setClasses(classeRegistrations);
+//		setClasses(classeRegistrations);
 	}
 	
 	public Student(String email, String password, String name, String lastname) {
@@ -116,22 +117,22 @@ public class Student {
 		this.planType = planType;
 	}
 
-	public List<StudentClassRegistration> getClasses() {
-		return classeRegistrations;
-	}
-
-	public void setClasses(List<StudentClassRegistration> classeRegistrations) {
-		if(classeRegistrations != null) {
-			this.classeRegistrations = classeRegistrations;
-		}
-	}
+//	public List<StudentClassRegistration> getClasses() {
+//		return classeRegistrations;
+//	}
+//
+//	public void setClasses(List<StudentClassRegistration> classeRegistrations) {
+//		if(classeRegistrations != null) {
+//			this.classeRegistrations = classeRegistrations;
+//		}
+//	}
 	
-	public void addClassRegistration(StudentClassRegistration classRegistration) {
-		getClasses().add(classRegistration);
-	}
-	
-	public void addClassRegistrations(List<StudentClassRegistration> classes) {
-		classes.stream().forEach(cr -> this.addClassRegistration(cr));
-	}
+//	public void addClassRegistration(StudentClassRegistration classRegistration) {
+//		getClasses().add(classRegistration);
+//	}
+//	
+//	public void addClassRegistrations(List<StudentClassRegistration> classes) {
+//		classes.stream().forEach(cr -> this.addClassRegistration(cr));
+//	}
 	
 }

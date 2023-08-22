@@ -21,9 +21,9 @@ public class Course {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	public int id;
 	
-	@Column(name = "name", nullable = false, length = 30)
+	@Column(name = "name", nullable = false, unique = true, length = 30)
 	public String name;
 	
 	@Column(name = "description", nullable = false, length = 300)
@@ -38,8 +38,8 @@ public class Course {
 	@Column(name = "demourl", nullable = false, length = 500)
 	public String demoUrl;
 	
-	@OneToMany(mappedBy = "course")
-	public List<CourseClass> classes = new ArrayList<>();
+//	@OneToMany(mappedBy = "course")//DO NOT USE THIS IN JAVA SPRING!!! Memory leak!
+//	public List<CourseClass> classes = new ArrayList<>();
 	
 	//Find out how to deal with this DB-wise
 	public Set<CourseMarkers> markers = new HashSet<>();
@@ -47,13 +47,14 @@ public class Course {
 	public Course() {
 	}
 
-	public Course(String name, String description, Double estimateHours, String demoUrl, List<CourseClass> classes,
+//	public Course(String name, String description, Double estimateHours, String demoUrl, List<CourseClass> classes,
+	public Course(String name, String description, Double estimateHours, String demoUrl,
 			Set<CourseMarkers> markers) {
 		this.name = name;
 		this.description = description;
 		this.estimateHours = estimateHours;
 		this.demoUrl = demoUrl;
-		this.classes = classes;
+//		this.classes = classes;
 		this.markers = markers;
 	}
 	
@@ -97,23 +98,23 @@ public class Course {
 		this.demoUrl = demoUrl;
 	}
 
-	public List<CourseClass> getClasses() {
-		return classes;
-	}
-
-	public void setClasses(List<CourseClass> classes) {
-		if(classes != null) {			
-			this.classes = classes;
-		}
-	}
+//	public List<CourseClass> getClasses() {
+//		return classes;
+//	}
+//
+//	public void setClasses(List<CourseClass> classes) {
+//		if(classes != null) {			
+//			this.classes = classes;
+//		}
+//	}
 	
-	public void addClass(CourseClass courseClass) {
-		getClasses().add(courseClass);
-	}
-	
-	public void addClasses(List<CourseClass> classes) {
-		classes.stream().forEach(cc -> addClass(cc));
-	}
+//	public void addClass(CourseClass courseClass) {
+//		getClasses().add(courseClass);
+//	}
+//	
+//	public void addClasses(List<CourseClass> classes) {
+//		classes.stream().forEach(cc -> addClass(cc));
+//	}
 
 	public Set<CourseMarkers> getMarkers() {
 		return markers;
