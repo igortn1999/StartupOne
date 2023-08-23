@@ -1,17 +1,22 @@
 package com.fiap.codigo.dto;
 
+import java.util.List;
+import java.util.Set;
+
+import com.fiap.codigo.utilities.CourseMarkers;
+
 public class CourseDto {
 	
-public int id;
-	
-	
+	public int id;
 	public String name;
 	public String description;
 	public Double estimateHours;
 	public String demoUrl;
+	public List<CourseClassDto> classes;
+	public Set<CourseMarkers> markers;
 	
 	public CourseDto() {
-		super();
+		
 	}
 
 	public int getId() {
