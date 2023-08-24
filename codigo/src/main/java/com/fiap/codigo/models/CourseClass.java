@@ -54,23 +54,8 @@ public class CourseClass {
 	
 
 	public CourseClass() {
-		
-	}
-
-	public CourseClass(Course course, String name, String details, Double estimateHours, String videoUrl,
-//			String codeExample, Date publishDate, String lang, String task, List<StudentClassRegistration> students) {
-			String codeExample, Date publishDate, String lang, String task) {
-		super();
-		this.course = course;
-		this.name = name;
-		this.details = details;
-		this.estimateHours = estimateHours;
-		this.videoUrl = videoUrl;
-		this.codeExample = codeExample;
-		this.publishDate = publishDate;
-		this.lang = lang;
-		this.task = task;
-//		this.students = students;
+		//The framework will take care of creating and setting models.
+		//Just a empty builder will handle the problem
 	}
 
 	public Long getId() {

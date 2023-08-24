@@ -1,8 +1,6 @@
 package com.fiap.codigo.models;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import com.fiap.codigo.utilities.CourseMarkers;
@@ -12,7 +10,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -32,38 +29,26 @@ public class Course {
 	@Column(name = "estimatehours", nullable = false, precision = 4)
 	public Double estimateHours;
 	
-//	@Column(name = "percentcomplete", nullable = false, precision = 4) //TODO - Should this be tracked by the StundentClassRegistration table?
-//	public Double percentComplete; 
-	
 	@Column(name = "demourl", nullable = false, length = 500)
 	public String demoUrl;
 	
 //	@OneToMany(mappedBy = "course")//DO NOT USE THIS IN JAVA SPRING!!! Memory leak!
 //	public List<CourseClass> classes = new ArrayList<>();
 	
-	//Find out how to deal with this DB-wise
+	//TODO - Find out how to deal with this DB-wise
 	public Set<CourseMarkers> markers = new HashSet<>();
 
 	public Course() {
+		//The framework will take care of creating and setting models.
+		//Just a empty builder will handle the problem
 	}
 
-//	public Course(String name, String description, Double estimateHours, String demoUrl, List<CourseClass> classes,
-	public Course(String name, String description, Double estimateHours, String demoUrl,
-			Set<CourseMarkers> markers) {
-		this.name = name;
-		this.description = description;
-		this.estimateHours = estimateHours;
-		this.demoUrl = demoUrl;
-//		this.classes = classes;
-		this.markers = markers;
+	public int getId() {
+		return id;
 	}
-	
-	public Course(String name, String description, Double estimateHours, String demoUrl){
-		this.name = name;
-		this.description = description;
-		this.estimateHours = estimateHours;
-		this.demoUrl = demoUrl;
 
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -123,8 +108,6 @@ public class Course {
 	public void setMarkers(Set<CourseMarkers> markers) {
 		this.markers = markers;
 	} 
-	
-	
 	
 }
 

@@ -1,8 +1,9 @@
 package com.fiap.codigo.dto;
 
-import java.util.List;
 import java.util.Set;
+import java.util.List;
 
+import com.fiap.codigo.models.CourseClass;
 import com.fiap.codigo.utilities.CourseMarkers;
 
 public class CourseDto {
@@ -12,7 +13,7 @@ public class CourseDto {
 	public String description;
 	public Double estimateHours;
 	public String demoUrl;
-	public List<CourseClassDto> classes;
+	public List<CourseClass> classes;
 	public Set<CourseMarkers> markers;
 	
 	public CourseDto() {
@@ -58,7 +59,13 @@ public class CourseDto {
 	public void setDemoUrl(String demoUrl) {
 		this.demoUrl = demoUrl;
 	}
-	
-	
+
+	public Set<CourseMarkers> getMarkers() {
+		return markers;
+	}
+
+	public void setMarkers(Set<CourseMarkers> markers) {
+		this.markers = markers;
+	}
 
 }

@@ -6,8 +6,9 @@ import com.fiap.codigo.models.Course;
 
 public class CourseClassDto {
 	
-	private Long id;
-	public Course course;
+	private int id;
+//	public Course course;
+	private int course_id;
 	public String name;
 	public String details;
 	public Double estimateHours;
@@ -21,24 +22,32 @@ public class CourseClassDto {
 		super();
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public Course getCourse() {
-		return course;
-	}
-
-	public void setCourse(Course course) {
-		this.course = course;
-	}
+//	public Course getCourse() {
+//		return course;
+//	}
+//
+//	public void setCourse(Course course) {
+//		this.course = course;
+//	}
 
 	public String getName() {
 		return name;
+	}
+
+	public int getCourse_id() {
+		return course_id;
+	}
+
+	public void setCourse_id(int course_id) {
+		this.course_id = course_id;
 	}
 
 	public void setName(String name) {
