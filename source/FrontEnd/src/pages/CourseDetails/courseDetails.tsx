@@ -5,10 +5,19 @@ import Navbar from "../Navbar";
 import Lesson from "./components/Lesson";
 
 function CourseDetails() {
+  const embedId = "DXmCU7v9glM";
   return (
     <>
       <Navbar />
       <div className="course-details">
+      <iframe
+            width="74%"
+            height="500rem"
+            src={`https://www.youtube.com/embed/${embedId}`}
+            allow="picture-in-picture"
+            allowFullScreen
+            title="Embedded youtube"
+          />
         <h1>Python</h1>
         <h2>do básico ao avançado</h2>
 
@@ -35,7 +44,9 @@ function CourseDetails() {
             aria-valuemin={0}
             aria-valuemax={100}
           >
-            <div className="progress-bar" style={{ width: "25%" }}>25%</div>
+            <div className="progress-bar" style={{ width: "25%" }}>
+              25%
+            </div>
           </div>
           <p>30 / 120 Minutos</p>
         </div>

@@ -2,8 +2,14 @@ import "./styles/Lesson.css";
 import complete from "../assets/check-circle.png";
 import incomplete from "../assets/oval.png";
 import clock from "../assets/clock.png";
+import { Link, useNavigate } from "react-router-dom";
 
 function Lesson(props :any){
+
+    const navigate = useNavigate();
+    function handleClick(){
+        navigate("/lesson");
+    }
     return <div className="lesson">
 
         <div className="lesson-information">
@@ -15,7 +21,7 @@ function Lesson(props :any){
         <img src={clock}/>
         <p>{props.duration}</p>
         {
-            props.status==="complete"?<button className="start-lesson">Revisar</button>:<button  className="start-lesson">Começar</button>
+            props.status==="complete"?<button className="start-lesson" onClick={handleClick}>Revisar</button>:<button  className="start-lesson" onClick={handleClick}>Começar</button>
 
         }
         </div>

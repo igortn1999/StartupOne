@@ -1,14 +1,68 @@
 .StudyArea{
     display: grid;
-    grid-template-columns:20% 40% 40%;
+    grid-template-columns:20% 60% 20%;
     justify-content: space-between;
     width: 100%;
     overflow: hidden;
+    margin-top: 2rem;
 }
 
 .lesson{
-    grid-column: 1/span 3;
+    width: 70% !important;
     margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
+.lesson-page{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 100%;
+    justify-items: center;
+}
+
+.lesson-content{
+    display: grid;
+    width: 70%;
+    text-align: left;
+}
+
+.lesson-content code{
+    background-color: #414141;
+    color: white;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    font-weight: 600;
+}
+
+.lesson-content h2{
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.lesson-content code .orange{
+    color:#C27D57;
+}
+
+
+.lesson-content code .blue{
+    color:#1a9eca;
+}
+
+.lesson-header{
+    background: linear-gradient(90deg, #414141 0%, rgba(95, 94, 94, 0.00) 100%);
+    width: 100%;
+    padding: 1rem;
+}
+
+.hands-on-material{
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    background-color: #484848;
+}
+
+.StudyArea .tasks{
+    display: grid;
+}

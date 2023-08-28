@@ -8,7 +8,7 @@ function Navbar() {
       <div className="container-fluid">
         <img
           src={logo}
-          className="startup-logo"
+          id="startup-logo"
           onClick={(e) => {
             navigate("/");
           }}
@@ -35,9 +35,9 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-item nav-link" to={"/"}>
+              <a className="nav-item nav-link" href={"/#catalogo"}>
                 Catálogo
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
               <Link className="nav-item nav-link" to={"/"}>

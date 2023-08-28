@@ -27,6 +27,10 @@
     justify-content: space-evenly;
 }
 
-.startup-logo{
+#startup-logo{
     width: 14%;
+}
+
+#startup-logo{
+    cursor: pointer !important;
 }
