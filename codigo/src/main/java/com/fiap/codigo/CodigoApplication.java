@@ -28,7 +28,7 @@ public class CodigoApplication {
 	
 	@EventListener
 	public void appReady(ApplicationReadyEvent event) {
-		boolean mock = false;
+		boolean mock = true;
 		
 		if(mock) {
 			mockData();
@@ -36,45 +36,56 @@ public class CodigoApplication {
 	}
 	
 	private void mockData() {
+		Course course = mockCourse("Python", "Learn python today!", 50.0, "DXmCU7v9glM", "");
 		
+		String class1details = "O curso Python, do zero ao avançado é um curso completo para quem deseja aprender Python e se tornar um desenvolvedor com conhecimentos intermediários. O curso é ministrado pelo professor John Doe, é atualizado com a última versão do, Python 3.11 e inclui 10 cases reais para ajudar você a desenvolver as habilidades de programação.";
+		String class1Code = "#Escreva seu codigo abaixo\r\n"
+						  + "idade=12\r\n"
+						  + "\r\n"
+						  + "nome = \"John Doe\"";
+		String class1Task = "Crie uma variável com a sua idade, Crie uma variável com o seu nome";
+		
+		CourseClass class1 = mockClass(course, "introdução", class1details, 0.25, "BW9Va5syNC0", class1Code, new Date(), "Python", class1Task);	
+		
+		
+		
+		String class2details = "learn how to use arrays in python!" ;
+		String class2Code = "Não há codigo, apenas veja esta receita da palmirinha!";
+		String class2Task = "Faça sua propria receita com a palmirinha!";
+		
+		CourseClass class2 = mockClass(course, "Arrays", class2details, 0.5, "RfCUO02nWGY", class2Code, new Date(), "Python", class2Task);		
+	}
+	
+	private Course mockCourse(String name, String description, double estimateHours, String overviewUrl, String image) {
 		Course course = new Course();
 		
-		course.setName("Python");
-		course.setDescription("Learn python today!");
-		course.setEstimateHours(50.0);
-		course.setDemoUrl("www.google.com");
-	
+		course.setName(name);
+		course.setDescription(description);
+		course.setEstimateHours(estimateHours);
+		course.setOverviewUrl(overviewUrl);
+		course.setImage(image);
+		
 		courseRepo.save(course);
 		
-//		CourseClass courseClass1 = new CourseClass(course, "Variables", "learn how to use variables in python!", 0.1, "www.google.com", "INSERT CODE EXAMPLE HERE", new Date(), "Python", "create a code with variables");
-//		CourseClass courseClass2 = new CourseClass(course, "Arrays", "learn how to use arrays in python!", 0.3, "www.google.com", "INSERT CODE EXAMPLE HERE (Again)", new Date(), "Python", "create a code with arrays");
+		return course;
+	}
+	
+	private CourseClass mockClass(Course course, String name, String details, double estimateHours, String videoUrl, String codeExample, Date publishDate, String lang, String task) {
+		CourseClass courseClass = new CourseClass();
 		
-		CourseClass courseClass1 = new CourseClass();
-		CourseClass courseClass2 = new CourseClass();
+		courseClass.setCourse(course);
+		courseClass.setName(name);
+		courseClass.setDetails(details);
+		courseClass.setEstimateHours(estimateHours);
+		courseClass.setVideoUrl(videoUrl);
+		courseClass.setCodeExample(codeExample);
+		courseClass.setPublishDate(publishDate);
+		courseClass.setLang(lang);
+		courseClass.setTask(task);
 		
-		courseClass1.setCourse(course);
-		courseClass1.setName("Variables");
-		courseClass1.setDetails("learn how to use variables in python!");
-		courseClass1.setEstimateHours(0.1);
-		courseClass1.setVideoUrl("www.google.com");
-		courseClass1.setCodeExample("INSERT CODE EXAMPLE HERE");
-		courseClass1.setPublishDate(new Date());
-		courseClass1.setLang("Python");
-		courseClass1.setTask("create a code with variables");
+		classRepo.save(courseClass);
 
-		courseClass2.setCourse(course);
-		courseClass2.setName("Arrays");
-		courseClass2.setDetails("learn how to use arrays in python!");
-		courseClass2.setEstimateHours(0.3);
-		courseClass2.setVideoUrl("www.google.com");
-		courseClass2.setCodeExample("INSERT CODE EXAMPLE HERE");
-		courseClass2.setPublishDate(new Date());
-		courseClass2.setLang("Python");
-		courseClass2.setTask("create a code with arrays");
-		
-		classRepo.save(courseClass1);
-		classRepo.save(courseClass2);
-		
+		return courseClass;
 	}
 
 }

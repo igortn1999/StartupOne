@@ -29,8 +29,11 @@ public class Course {
 	@Column(name = "estimatehours", nullable = false, precision = 4)
 	public Double estimateHours;
 	
-	@Column(name = "demourl", nullable = false, length = 500)
-	public String demoUrl;
+	@Column(name = "overviewUrl", nullable = false, length = 500)
+	public String overviewUrl;
+	
+	@Column(name = "image", nullable = false, length = 500)
+	public String image;
 	
 //	@OneToMany(mappedBy = "course")//DO NOT USE THIS IN JAVA SPRING!!! Memory leak!
 //	public List<CourseClass> classes = new ArrayList<>();
@@ -75,12 +78,12 @@ public class Course {
 		this.estimateHours = estimateHours;
 	}
 
-	public String getDemoUrl() {
-		return demoUrl;
+	public String getOverviewUrl() {
+		return overviewUrl;
 	}
 
-	public void setDemoUrl(String demoUrl) {
-		this.demoUrl = demoUrl;
+	public void setOverviewUrl(String overviewUrl) {
+		this.overviewUrl = overviewUrl;
 	}
 
 //	public List<CourseClass> getClasses() {
@@ -107,6 +110,14 @@ public class Course {
 
 	public void setMarkers(Set<CourseMarkers> markers) {
 		this.markers = markers;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	} 
 	
 }

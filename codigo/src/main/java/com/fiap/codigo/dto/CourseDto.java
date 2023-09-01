@@ -12,7 +12,8 @@ public class CourseDto {
 	public String name;
 	public String description;
 	public Double estimateHours;
-	public String demoUrl;
+	public String overviewUrl;
+	public String image;
 	public List<CourseClass> classes;
 	public Set<CourseMarkers> markers;
 	
@@ -52,12 +53,12 @@ public class CourseDto {
 		this.estimateHours = estimateHours;
 	}
 
-	public String getDemoUrl() {
-		return demoUrl;
+	public String getOverviewUrl() {
+		return overviewUrl;
 	}
 
-	public void setDemoUrl(String demoUrl) {
-		this.demoUrl = demoUrl;
+	public void setOverviewUrl(String overviewUrl) {
+		this.overviewUrl = overviewUrl;
 	}
 
 	public Set<CourseMarkers> getMarkers() {
@@ -67,5 +68,23 @@ public class CourseDto {
 	public void setMarkers(Set<CourseMarkers> markers) {
 		this.markers = markers;
 	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public List<CourseClass> getClasses() {
+		return classes;
+	}
+
+	public void setClasses(List<CourseClass> classes) {
+		this.classes = classes;
+	}
+	
+	
 
 }
