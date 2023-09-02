@@ -25,7 +25,7 @@ function Courses() {
     <section className="cursos" id="catalogo">
       <h1 className="titulo-carreira">Trilhas de Carreira</h1>
       <section className="catalogo-carreira">
-        <Career title="Cientista de Dados" lessons={95} language={"Python"} imageurl={"https://media.istockphoto.com/id/1364317541/photo/data-scientists-hand-of-programmer-touching-and-analyzing-development-at-various-information.webp?b=1&s=170667a&w=0&k=20&c=6Tfu775xvgW8XbfT45IJSsniRJfzGi3_UxeB7Yz5tAY="}/>
+        <Career title="Cientista de Dados" lessons={95} demoMode={"blocked"} language={"Python"} imageurl={"https://media.istockphoto.com/id/1364317541/photo/data-scientists-hand-of-programmer-touching-and-analyzing-development-at-various-information.webp?b=1&s=170667a&w=0&k=20&c=6Tfu775xvgW8XbfT45IJSsniRJfzGi3_UxeB7Yz5tAY="}/>
         <Career title="Dev Full Stack" demoMode={"blocked"} lessons={180} language={"HTML,CSS,JS"} imageurl={"https://kinsta.com/pt/wp-content/uploads/sites/3/2021/12/what-is-a-full-stack-developer-1024x512.png"}/>
         <Career title="Dev Front-End" demoMode={"blocked"} lessons={54} language={"HTML,CSS,JS"} imageurl={"https://kinsta.com/pt/wp-content/uploads/sites/3/2021/12/front-end-developer-1024x512.png"}/>
         <Career title="Dev Back-End" demoMode={"blocked"} lessons={126} language={"Python"} imageurl={"https://assets.bitdegree.org/online-learning-platforms/storage/media/2018/08/what-is-a-web-developer.jpg"}/>

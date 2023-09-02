@@ -66,3 +66,10 @@
 .StudyArea .tasks{
     display: grid;
 }
+
+.control-bar{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 0.6rem;
+}

@@ -55,6 +55,8 @@ function CourseDetails() {
   ])
   window.scroll(0,0);
 
+
+
   useEffect(()=>{
     fetch(`${API_URL}/api/courses/id/${id}/classes`)
     .then(res => res.json())
@@ -123,6 +125,7 @@ function CourseDetails() {
             title={lesson.name}
             duration={`${lesson.estimateHours*60} Minutos`}
             status={"complete"}
+            id={lesson.id}
           />):<>
           
           <Lesson
