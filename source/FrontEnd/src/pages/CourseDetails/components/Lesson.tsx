@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 function Lesson(props: any) {
   const navigate = useNavigate();
   function handleClick() {
+    window.scroll(0,0);
     navigate(`/lesson/${props.id}`);
   }
 

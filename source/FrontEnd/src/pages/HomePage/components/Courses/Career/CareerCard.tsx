@@ -29,6 +29,7 @@ function Career(props: any) {
           className={`course-begin-btn ${props.demoMode}`}
           onClick={(e) => {
             navigate(`/course/${courseId}`);
+            window.scroll(0,0);
           }}
         >
           Começar
