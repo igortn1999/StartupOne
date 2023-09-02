@@ -10,6 +10,7 @@ import HtmlToReactParser from "html-to-react";
 import Navbar from "../Navbar";
 
 function StudyArea() {
+  window.scroll(0,0);
   const [code, setCode] = useState(
     `#Escreva seu codigo abaixo\nmessage = "Hello World!" \n\nprint(message)`
   );
