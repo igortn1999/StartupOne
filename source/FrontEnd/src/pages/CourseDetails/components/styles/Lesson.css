@@ -64,3 +64,7 @@
     background-color: rgb(255, 98, 148);
 }
 
+.lesson .blocked{
+    pointer-events: none;
+    opacity: 0.6;
+}

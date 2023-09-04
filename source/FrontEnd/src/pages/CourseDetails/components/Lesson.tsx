@@ -29,7 +29,7 @@ function Lesson(props: any) {
             Revisar
           </button>
         ) : (
-          <button className="start-lesson" onClick={handleClick}>
+          <button className="start-lesson blocked" onClick={handleClick}>
             Começar
           </button>
         )}

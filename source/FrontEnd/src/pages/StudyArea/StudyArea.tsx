@@ -9,11 +9,15 @@ import ReactDOMServer from "react-dom/server";
 import HtmlToReactParser from "html-to-react";
 import Navbar from "../Navbar";
 import API_URL from "../../config";
+import { useNavigate } from "react-router-dom";
 
 function StudyArea(props: any) {
   const [code, setCode] = useState(props.code);
   const [codeResults,setCodeResults] = useState({"error":undefined,"code":""});
+  const [selectedTasks, setSelectedTasks] = useState(Array(props.tasks.length).fill(false));
+  const navigate = useNavigate();
 
+  console.log(selectedTasks);
   function handleSubmission() {
     const data = {
       code: code,
@@ -37,8 +41,16 @@ function StudyArea(props: any) {
     .then(data => {
       setCodeResults(data);
       // do whatever you want with the data
+      setSelectedTasks(data.challengeList);
+
     });
   }
+
+  const handleCheckboxChange = (index :number) => {
+    const newSelectedTasks = [...selectedTasks];
+    newSelectedTasks[index] = !newSelectedTasks[index];
+    setSelectedTasks(newSelectedTasks);
+  };
 
   return (
     <>
@@ -68,12 +80,14 @@ function StudyArea(props: any) {
             </section>
             <section className="tasks">
               {props.tasks.map((task: string, i: number) => (
-                <div className="form-check">
+                <div className="form-check" key={i}>
                   <input
                     className="form-check-input"
                     type="checkbox"
                     value=""
                     id={`flexCheckCheckedDisabled${i + 1}`}
+                    checked={selectedTasks[i]}
+                    readOnly
                   />
                   <label
                     className="form-check-label"
@@ -102,7 +116,10 @@ function StudyArea(props: any) {
           <button onClick={(e)=>{
             handleSubmission();
           }}>Executar Código</button>
-          <button>Próximo</button>
+          <button onClick={(e)=>{
+            window.scroll(0,0);
+            navigate("/lesson/2");
+          }}>Próximo</button>
         </div>
       </div>
     </>

@@ -35,8 +35,8 @@ function App(props: any) {
   `;
 
     var tasks = [
-      "Crie uma variável com a sua idade",
       "Crie uma variável com seu nome",
+      "Crie uma variável com a sua idade",
     ];
 
     var handsOnIntro = `Agora que você 

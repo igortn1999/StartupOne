@@ -109,15 +109,15 @@ function CourseDetails() {
             id="progressbar"
             role="progressbar"
             aria-label="Basic example"
-            aria-valuenow={25} // Change this line to use a number
+            aria-valuenow={30} // Change this line to use a number
             aria-valuemin={0}
             aria-valuemax={100}
           >
-            <div className="progress-bar" style={{ width: "25%" }}>
-              25%
+            <div className="progress-bar" style={{ width: "30%" }}>
+              30%
             </div>
           </div>
-          <p>30 / 150 Minutos</p>
+          <p>45 / 150 Minutos</p>
         </div>
         <section className="course-list">
 
