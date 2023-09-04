@@ -105,6 +105,7 @@ function App(props: any) {
           tasks={tasks}
           handsOnIntro={handsOnIntro}
           code={code}
+          id = {id}
         />
       </div>
     </div>

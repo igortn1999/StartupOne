@@ -8,6 +8,9 @@ import com.fiap.codigo.models.CodeRequest;
 import com.fiap.codigo.services.CourseClassService;
 import com.fiap.codigo.services.CourseService;
 import com.fiap.codigo.services.ExecuteCodeService;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import com.fiap.codigo.models.CodeResponse;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -49,9 +52,45 @@ public class CourseController {
 
 	@PostMapping(path="/validate")
 	public ResponseEntity<Object> validateCode(@RequestBody CodeRequest codeRequest){
-		System.out.println(codeRequest.getCode());
-		String result = executeCodeService.executeCode(codeRequest.getCode());
-		return ResponseEntity.ok(result);
+		String validationType = codeRequest.getValidationType();
+		int lessonId = codeRequest.getLessonId();
+		String code = codeRequest.getCode();
+
+		System.out.println(validationType);
+		System.out.println(lessonId);
+		System.out.println(code);
+		String regexPattern;
+		String errorMessage;
+
+		if(lessonId==1){
+			regexPattern = "\\w.*= ?\\\".*\\\"";
+			errorMessage = "Você colocou aspas no codigo?";
+
+		}else{
+			regexPattern = "\\[.*\\]";
+			errorMessage = "Você fez uma lista com os caracteres '[' e ']' ?";
+		}
+
+		if("regex".equals(validationType)){
+			Pattern pattern = Pattern.compile(regexPattern, Pattern.CASE_INSENSITIVE);
+			Matcher matcher = pattern.matcher(code);
+			boolean matchFound = matcher.find();
+
+			if (matchFound) {
+				System.out.println("Exercício Correto");
+				String result = executeCodeService.executeCode(codeRequest.getCode());
+				CodeResponse customResponse = new CodeResponse(null, result);
+				return ResponseEntity.ok(customResponse);
+			} else {
+				String result = executeCodeService.executeCode(codeRequest.getCode());
+				CodeResponse customResponse = new CodeResponse(errorMessage, result);
+				return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(customResponse);
+			}
+
+		}else{
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Bad call");
+		}
+
 	}
 
 }

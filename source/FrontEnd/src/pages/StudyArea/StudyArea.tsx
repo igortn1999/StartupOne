@@ -8,11 +8,37 @@ import CodeOutput from "./components/codeOutput";
 import ReactDOMServer from "react-dom/server";
 import HtmlToReactParser from "html-to-react";
 import Navbar from "../Navbar";
+import API_URL from "../../config";
 
-function StudyArea(props :any) {
-  const [code, setCode] = useState(
-    props.code
-  );
+function StudyArea(props: any) {
+  const [code, setCode] = useState(props.code);
+  const [codeResults,setCodeResults] = useState({"error":undefined,"code":""});
+
+  function handleSubmission() {
+    const data = {
+      code: code,
+      lessonId: Number(props.id),
+      validationType: "regex",
+    };
+
+    const url = `${API_URL}/api/courses/validate`; // Replace with your API endpoint
+
+    fetch(url, {
+      method: "post",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    
+      //make sure to serialize your JSON body
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+      setCodeResults(data);
+      // do whatever you want with the data
+    });
+  }
 
   return (
     <>
@@ -41,17 +67,17 @@ function StudyArea(props :any) {
               <p>{props.handsOnIntro}</p>
             </section>
             <section className="tasks">
-              {props.tasks.map((task :string, i :number) => (
+              {props.tasks.map((task: string, i: number) => (
                 <div className="form-check">
                   <input
                     className="form-check-input"
                     type="checkbox"
                     value=""
-                    id={`flexCheckCheckedDisabled${i+1}`}
+                    id={`flexCheckCheckedDisabled${i + 1}`}
                   />
                   <label
                     className="form-check-label"
-                    htmlFor={`flexCheckCheckedDisabled${i+1}`}
+                    htmlFor={`flexCheckCheckedDisabled${i + 1}`}
                   >
                     {task}
                   </label>
@@ -69,11 +95,13 @@ function StudyArea(props :any) {
             fontSize={"16px"}
             editorProps={{ $blockScrolling: true }}
           />
-          <CodeOutput />
+          <CodeOutput text={codeResults}/>
         </div>
         <div className="control-bar">
           <button>Anteior</button>
-          <button>Executar Código</button>
+          <button onClick={(e)=>{
+            handleSubmission();
+          }}>Executar Código</button>
           <button>Próximo</button>
         </div>
       </div>
