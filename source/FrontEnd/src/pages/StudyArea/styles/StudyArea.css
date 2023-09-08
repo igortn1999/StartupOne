@@ -71,5 +71,15 @@
     display: flex;
     width: 100%;
     justify-content: space-evenly;
-    padding: 0.6rem;
+    padding: 0.4rem;
+    font-size: 0.8rem;
+}
+
+#execute{
+    background-color: rgb(99, 137, 99);
+    color:rgb(16, 50, 16);
+}
+
+#help{
+    background-color: #c25757;
 }
